@@ -1,4 +1,4 @@
-# Monthly Expense Tracking web Application
+# Daily Expense Tracking web Application
 
 ---
 
