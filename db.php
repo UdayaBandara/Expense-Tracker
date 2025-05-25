@@ -1,6 +1,6 @@
 <?php
 $host = 'localhost';
-$db = 'expense_db';
+$db = 'expense_tracker';
 $user = 'root';
 $pwd = '';
 $charset = 'utf8mb4';
