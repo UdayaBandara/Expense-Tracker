@@ -6,12 +6,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Expense Tracker</title>
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="bootstrap.min.css">
 </head>
 <body>
     <h2>Daily Expense Tracker</h2>
 
-    < action="add_expense.php" method="post">
+    <form action="add_expense.php" method="post">
         <label>Date: </label>
         <input type="date" name="expense_date" required>
         </br>
@@ -52,9 +52,12 @@
         </tr>
 
         <?php
-            $stmt = $pdo->query("SELECT * FROM expenses ORDER BY expenses_date DESC LIMIT 10");
+            $stmt = $pdo->query("SELECT * FROM expenses ORDER BY expense_date DESC LIMIT 10");
 
-            while ($row = $stmt->fetch()):
+            if ($stmt->rowCount() == 0) {
+                echo "There are no records to display";
+            } else {
+                while ($row = $stmt->fetch()):
         ?>
 
         <tr>
@@ -66,6 +69,7 @@
         </tr>
 
         <?php endwhile; ?>
+        <?php } ?>
     </table>
 </body>
 </html>
