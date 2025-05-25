@@ -20,6 +20,10 @@
         <input type="text" name="category" required>
         </br>
 
+        <label>Sub Category: </label>
+        <input type="text" name="sub_category" required>
+        </br>
+
         <label>Amount: </label>
         <input type="number" name="amount" step="0.01" required>
         </br>
@@ -46,6 +50,7 @@
         <tr>
             <th>Date</th>
             <th>Category</th>
+            <th>Sub Category</th>
             <th>Amount</th>
             <th>Method</th>
             <th>Notes</th>
@@ -63,6 +68,7 @@
         <tr>
             <td><?= htmlspecialchars($row['expense_date']) ?></td>
             <td><?= htmlspecialchars($row['category']) ?></td>
+            <td><?= htmlspecialchars($row['sub_category']) ?></td>
             <td><?= htmlspecialchars($row['amount']) ?></td>
             <td><?= htmlspecialchars($row['payment_method']) ?></td>
             <td><?= htmlspecialchars($row['notes']) ?></td>

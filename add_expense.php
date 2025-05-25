@@ -2,11 +2,12 @@
 require_once "db.php";
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $stmt = $pdo->prepare("INSERT INTO expenses (expense_date, category, amount, payment_method, notes) VALUES (?,?,?,?,?)");
+    $stmt = $pdo->prepare("INSERT INTO expenses (expense_date, category, sub_category, amount, payment_method, notes) VALUES (?,?,?,?,?,?)");
 
     $stmt->execute([
         $_POST['expense_date'],
         $_POST['category'],
+        $_POST['sub_category'],
         $_POST['amount'],
         $_POST['payment_method'],
         $_POST['notes']

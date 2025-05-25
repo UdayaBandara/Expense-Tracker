@@ -37,6 +37,7 @@
                 id INT AUTO_INCREMENT PRIMARY KEY,
                 expense_date DATE NOT NULL,
                 category VARCHAR(50),
+                sub_category VARCHAR(50),
                 amount DECIMAL(10,2),
                 payment_method VARCHAR(30),
                 notes TEXT,
